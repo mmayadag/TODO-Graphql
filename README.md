@@ -31,7 +31,7 @@ make stop
 #### test
 
 ```bash
-cd api && yarn && yarn test
+yarn && yarn test
 ```
 
 ## API Endpoint Methods

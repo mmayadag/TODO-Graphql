@@ -1,8 +1,9 @@
 import { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
-const StyledLinkDescription = styled.a`
+const StyledLinkDescription = styled(Link)`
     display:block ;
     height: 18px;
     margin: 21px 135px 52px 0;
@@ -15,8 +16,9 @@ const StyledLinkDescription = styled.a`
 
 type LinkDescriptionProps = {
     children: ReactNode;
+    to: string;
 }
 
-const LinkDescription: FC<LinkDescriptionProps> = ({ children }) => <StyledLinkDescription>{children}</StyledLinkDescription>;
+const LinkDescription: FC<LinkDescriptionProps> = ({ children, to }) => <StyledLinkDescription to={to}>{children}</StyledLinkDescription>;
 
 export default LinkDescription;

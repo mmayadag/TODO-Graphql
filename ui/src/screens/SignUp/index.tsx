@@ -9,7 +9,7 @@ const SignUp: FC = () => {
             <TextInput placeholder="Full Name" />
             <TextInput placeholder="Email" type="email" />
             <TextInput placeholder="Password" type="password" />
-            <LinkDescription>Do have an account? Sign in.</LinkDescription>
+            <LinkDescription to="/login">Do have an account? Sign in.</LinkDescription>
             <Button title="Sign Up" />
         </MainContainer>
     )

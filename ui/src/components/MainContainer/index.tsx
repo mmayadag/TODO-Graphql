@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { TodoLogo } from '../index'
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<{ width?: number, minHeight?: number }>`
     width:  ${props => props.width ?? 390}px;
     min-height: ${props => props.minHeight ?? 'auto'};
     border-radius: 8px;

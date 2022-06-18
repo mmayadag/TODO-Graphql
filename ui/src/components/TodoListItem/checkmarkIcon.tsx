@@ -4,7 +4,7 @@ import CheckmarkSVG from "@/assets/checkmark.svg";
 import styled from "styled-components";
 
 
-const CheckmarkIconContainer = styled.span`
+const CheckmarkIconContainer = styled.span<{ isChecked: boolean }>`
     display: flex;
     align-items: center;
     justify-content: center;

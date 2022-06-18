@@ -14,7 +14,7 @@ const StyledButton = styled.button`
     background-color: #4a77e5;
     font-size: 16px;
     color: #fff;
-    font-family: MarkPro;
+    font-family: MarkProBook;
 `;
 
 

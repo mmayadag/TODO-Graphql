@@ -6,7 +6,7 @@ const StyledDescription = styled.div`
     width: 100%;
     height: 20px;
     margin: 6px 30px 14px 0;
-    font-family: MarkPro;
+    font-family: MarkProBook;
     font-size: 16px;
     color: #a1a4ad;
 `;

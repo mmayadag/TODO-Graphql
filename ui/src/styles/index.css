@@ -12,9 +12,19 @@ code {
 
 @font-face {
   font-family: MarkPro;
-  src: local(MarkPro-Bold), url(@/assets/fonts/MarkPro/MarkPro-Bold.woff2) format('woff2'),
-    url(@/assets/fonts/MarkPro/MarkPro-Bold.woff) format('woff'),
-    url(@/assets/fonts/MarkPro/MarkPro-Bold.ttf) format('truetype');
+  src: local(MarkPro-Bold), url(@/assets/fonts/MarkPro/Mark-Pro-Bold.woff2) format('woff2'),
+    url(@/assets/fonts/MarkPro/Mark-Pro-Bold.woff) format('woff'),
+    url(@/assets/fonts/MarkPro/Mark-Pro-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: MarkProBook;
+  src: local(MarkPro-Bold), url(@/assets/fonts/MarkPro/Mark-Pro-Medium.woff2) format('woff2'),
+    url(@/assets/fonts/MarkPro/Mark-Pro-Medium.woff) format('woff'),
+    url(@/assets/fonts/MarkPro/Mark-Pro-Medium.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;

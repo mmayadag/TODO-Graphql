@@ -4,6 +4,7 @@ import './App.css'
 import TodoList from '@/screens/TodoList';
 import Login from '@/screens/Login';
 import SignUp from '@/screens/SignUp';
+import PrivateRoute from '@/components/';
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 

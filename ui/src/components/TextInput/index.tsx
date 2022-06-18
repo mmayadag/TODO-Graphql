@@ -7,7 +7,7 @@ const StyledTextInput = styled.input`
     margin: 29px 0 0 0;
     border: 0;
     border-bottom: solid 1px #e1e1e1;
-    font-family: MarkPro;
+    font-family: MarkProBook;
     font-size: 16px;
     color: #a1a4ad;
     padding-bottom: 10px;

@@ -1,0 +1,9 @@
+{
+  "name": "mayadag-todo-graphql",
+  "version": "1.0.0",
+  "description": "graphql api + ui for todo app",
+  "main": "index.js",
+  "author": "Murat Mayadağ <murat@mayadag.com>",
+  "license": "MIT",
+  "private": true
+}

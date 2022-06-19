@@ -11,7 +11,6 @@ const AddTodo: FC = () => {
 
     const sendTodo = () => {
         addTodo({ variables: { title } });
-        // if (title) { setTitle("") }
     }
     const onSubmit = (e: any) => {
         e.preventDefault();

@@ -1,30 +1,14 @@
-/*
-import { Redirect, Route } from "react-router-dom";
-// @ts-ignore
-import { useAuth } from '@/hooks/useAuth';
-const PrivateRoute = ({ children, ...rest }) => {
-    let auth = useAuth();
-    return (
-        <Route
-            {...rest}
-            render={({ location }) =>
-                auth.user ? (
-                    children
-                ) : (
-                    <Redirect
-                        to={{
-                            pathname: "/login",
-                            state: { from: location }
-                        }}
-                    />
-                )
-            }
-        />
-    );
+import { FC, useContext, ReactNode } from 'react';
+import { Navigate } from "react-router-dom";
+import { AuthContext } from '@/context/authContext';
+
+type PrivateRouteProps = {
+    children: ReactNode | JSX.Element | null;
+}
+const PrivateRoute: FC<PrivateRouteProps> = ({ children }) => {
+    const { user } = useContext(AuthContext);
+
+    return !user.token ? <Navigate to="/login" replace /> : <>{children}</>;
 }
 
 export default PrivateRoute;
-
-*/
-
-export { };

@@ -1,13 +1,23 @@
-import { FC, useState } from "react";
+import { FC, useState, useEffect, useContext } from "react";
 import { Title, MainContainer, Description, TextInput, LinkDescription, Button } from "@/components";
 import { useMutation } from '@apollo/client';
 import { LOGIN_MUTATION } from '@/graphql/login';
+import { AuthContext } from '@/context/authContext';
+import { useNavigate } from "react-router-dom";
 
 const SignUp: FC = () => {
-    const [login, { error, reset }] = useMutation(LOGIN_MUTATION);
+    const [login, { data, error, reset }] = useMutation(LOGIN_MUTATION);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const { Login } = useContext(AuthContext);
 
+    useEffect(() => {
+        if (data?.login) {
+            Login(data.login);
+            navigate("/todolist", { replace: true });
+        }
+    }, [data])
     return (
         <MainContainer minHeight="471px">
             <Title>Welcome Back!</Title>

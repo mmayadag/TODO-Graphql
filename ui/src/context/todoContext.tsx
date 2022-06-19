@@ -19,34 +19,12 @@ type ITodoContext = {
     deleteTodo: (id: string | number) => void;
 }
 
-const TodoData: TodoItem[] = [{
-    id: 1,
-    isCompleted: false,
-    content: "Make a todo List"
-},
-{
-    id: 2,
-    isCompleted: true,
-    content: "Check off first item"
-},
-{
-    id: 3,
-    isCompleted: false,
-    content: "Realize you already did 2 things today "
-},
-{
-    id: 4,
-    isCompleted: false,
-    content: "Reward yourself with a nice, long nap"
-}]; // TODO: Remove
-
-
 export const TodoContext = createContext({} as ITodoContext);
 
 export const TodoContextProvider: FC<IAppProps> = ({
     children,
 }) => {
-    const [todoItems, setTodoItems] = useState<TodoItem[]>(TodoData);
+    const [todoItems, setTodoItems] = useState<TodoItem[]>([]);
 
     const [filterSelection, setFilterSelection] = useState<FilterSelection>('all');
     const [filteredItems, setFilteredItems] = useState<TodoItem[]>([]);
@@ -55,31 +33,41 @@ export const TodoContextProvider: FC<IAppProps> = ({
         setFilterSelection(selection);
     };
     const toggleTodoStatus = (id: string | number) => {
-        const newItems = todoItems.map(item => {
+        const items = filterSelection === 'all' ? todoItems : filteredItems; // TODO: Get from graphql
+        const newItems = items.map(item => {
             if (item.id === id) {
                 item.isCompleted = !item.isCompleted;
             }
             return item;
         });
-        setTodoItems(newItems);
+        if (filterSelection === 'all') {
+            setTodoItems(newItems);
+        } else {
+            setFilteredItems(newItems);
+        }
     }
 
     const deleteTodo = (id: string | number) => {
         const newItems = todoItems.filter(item => item.id !== id);
         setTodoItems(newItems);
+        const newItems1 = filteredItems.filter(item => item.id !== id); // TODO delete both
+        setFilteredItems(newItems1);
     }
     useEffect(() => {
         let filtered: TodoItem[] = [];
         if (filterSelection === 'Completed') {
-            filtered = TodoData.filter(item => item.isCompleted);
+            filtered = todoItems.filter(item => item.isCompleted);
         }
         if (filterSelection === 'Incomplete') {
-            filtered = TodoData.filter(item => !item.isCompleted);
+            filtered = todoItems.filter(item => !item.isCompleted);
         }
         setFilteredItems(filtered);
-        setRenderItems(filterSelection === 'all' ? todoItems : filtered) // TODO: Get from graphql
     }, [filterSelection, todoItems]); // TODO: Get from graphql
 
+    useEffect(() => {
+        const items = filterSelection === 'all' ? todoItems : filteredItems;
+        setRenderItems(items);
+    }, [filteredItems, todoItems]);
 
     const context = {
         renderItems,

@@ -1,4 +1,3 @@
-import { FC } from "react";
 import styled from "styled-components";
 
 
@@ -26,11 +25,4 @@ const StyledTextInput = styled.input`
 `;
 
 
-type TextInputProps = {
-    placeholder: string;
-    type: "text" | "email" | "password";
-}
-
-const TextInput: FC<TextInputProps> = ({ placeholder, type = "text" }) => <StyledTextInput type={type} placeholder={placeholder} />;
-
-export default TextInput;
+export default StyledTextInput;

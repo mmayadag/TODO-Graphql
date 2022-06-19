@@ -1,0 +1,11 @@
+mutation verifyRequest {
+  verifyRequest {
+    succeed
+  }
+}
+
+mutation verify($token: String!) {
+  verify(token: $token) {
+    accessToken
+  }
+}

@@ -8,20 +8,22 @@ const StyledButton = styled.button`
     align-items: center;
     justify-content: center;
     height: 36px;
-    padding: 8px 134px 8px 135px;
+    padding: 8px 0 8px 0;
     border-radius: 4px;
     border: solid 1px #4a77e5;
     background-color: #4a77e5;
     font-size: 16px;
     color: #fff;
     font-family: MarkProBook;
+    user-select: none;
+    cursor: pointer;
 `;
 
 
 type ButtonProps = {
     title: string;
-}
+} | React.ComponentPropsWithoutRef<"button">;
 
-const Button: FC<ButtonProps> = ({ title }) => <StyledButton>{title}</StyledButton>;
+const Button: FC<ButtonProps> = ({ title, ...props }) => <StyledButton {...props}>{title}</StyledButton>;
 
 export default Button;

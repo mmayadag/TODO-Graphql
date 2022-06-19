@@ -14,6 +14,7 @@ const StyledTitle = styled.div`
     line-height: normal;
     letter-spacing: normal;
     color: #1f2a4b;
+    user-select: none;
 `;
 
 type TitleProps = {

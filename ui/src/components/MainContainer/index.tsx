@@ -10,11 +10,12 @@ const StyledContainer = styled.div<{ width?: number, minHeight?: number }>`
     background-color: #fff;
     padding: 35px 30px;
     box-sizing: border-box;
+    position: relative;
 `;
 
 type MainContainerProps = {
     width?: number;
-    minHeight?: number;
+    minHeight?: string;
     children: ReactNode;
 }
 const MainContainer: FC<MainContainerProps> = ({ children, width, minHeight }) => <StyledContainer width={width} minHeight={minHeight}>

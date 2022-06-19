@@ -1,4 +1,6 @@
+/*
 import { Redirect, Route } from "react-router-dom";
+// @ts-ignore
 import { useAuth } from '@/hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
     let auth = useAuth();
@@ -22,3 +24,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 }
 
 export default PrivateRoute;
+
+*/
+
+export { };

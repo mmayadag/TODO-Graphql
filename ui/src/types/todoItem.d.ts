@@ -1,5 +1,5 @@
 type TodoItem = {
     id: string | number;
-    isChecked: boolean;
+    isCompleted: boolean;
     content: string;
 }

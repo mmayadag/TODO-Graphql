@@ -10,7 +10,11 @@ const RemoveIconContainer = styled.img`
     width: 11px;
     height: 11px;
 `;
-const RemoveIcon: FC = () => <RemoveIconContainer src={RemoveSVG} alt="remove" />
+
+type RemoveIconProps = {
+    onClick: () => void;
+}
+const RemoveIcon: FC<RemoveIconProps> = ({ onClick }) => <RemoveIconContainer className="remove" src={RemoveSVG} alt="remove" onClick={onClick} />
 
 export default RemoveIcon;
 

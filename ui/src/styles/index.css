@@ -6,10 +6,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
 @font-face {
   font-family: MarkPro;
   src: local(MarkPro-Bold), url(@/assets/fonts/MarkPro/Mark-Pro-Bold.woff2) format('woff2'),
